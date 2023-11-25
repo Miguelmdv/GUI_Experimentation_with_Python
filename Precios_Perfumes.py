@@ -169,7 +169,7 @@ def nueva_entrada(ruta_valida, nombre_archivo):
                         except ValueError:
                             print(precio, "no son numeros válidos")
                             messagebox.showinfo("Fallo", f"{precio} no son numeros válidos")
-                        if precio is float:
+                        if isinstance(precio, float):
                             while n_incorrecto:
                                 ml = get_prompt("ml", "ml del bote: ")
                                 if ml:
@@ -179,7 +179,7 @@ def nueva_entrada(ruta_valida, nombre_archivo):
                                         print(ml, "no son numeros válidos")
                                         messagebox.showinfo("Fallo", f"{ml} no son numeros válidos")
 
-                                    if ml is float:
+                                    if isinstance(ml, float):
                                         n_incorrecto = False   
                                         calc = 100.0 * precio / ml
 
